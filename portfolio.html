@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - LARE Damnan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #0077cc;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    nav {
+      background: #005fa3;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0077cc;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+    .projet {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+    .projet:hover {
+      transform: scale(1.03);
+      border-color: #0077cc;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #0077cc;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0077cc;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Portfolio - LARE Damnan</h1>
+    <p>Bienvenue sur mon site personnel</p>
+  </header>
+
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#apropos">À propos</a>
+    <a href="#competences">Compétences</a>
+    <a href="#projets">Projets</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="accueil">
+    <h2>Accueil</h2>
+    <p>Bonjour et bienvenue ! Ce portfolio présente mes informations, compétences, projets et passions.</p>
+  </section>
+  
+    <section id="apropos">
+  <h2>À propos</h2>
+  <div style="text-align:center;">
+    <img src="image.png" alt="Photo de profil" 
+         style="width:180px; height:180px; object-fit:cover; border-radius:50%; box-shadow:0 2px 8px rgba(0,0,0,0.2); margin-bottom:15px;">
+  </div>
+  <p>Je m'appelle <strong>LARE Damnan</strong>, passionnée par le journalisme, les médias et le développement web. 
+  Ce site est une vitrine de mes expériences et projets réalisés au cours de ma formation et de mes activités professionnelles.</p>
+</section>
+
+  </section>
+
+  <section id="competences">
+    <h2>Compétences</h2>
+    <ul>
+      <li>Rédaction web et journalisme</li>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Gestion des médias et communication</li>
+      <li>Montage vidéo et création de contenu</li>
+      <li>Trésorerie et gestion financière associative</li>
+    </ul>
+  </section>
+
+  <section id="projets">
+    <h2>Projets</h2>
+    <div class="projet">
+      <h3>Projet 1 : Site web de journalisme</h3>
+      <p>Création d’un site pour publier des articles, interviews et reportages en ligne.</p>
+    </div>
+    <div class="projet">
+      <h3>Projet 2 : Portfolio multimédia</h3>
+      <p>Développement d’un portfolio personnel intégrant mes vidéos, articles et travaux de communication.</p>
+    </div>
+  </section>
+
+  <section id="hobbies">
+    <h2>Hobbies et activités sportives</h2>
+    <p>Je pratique régulièrement le sport. J’aime aussi écrire et participer à des clubs littéraires.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Formulaire de contact</h2>
+    <form id="contactForm">
+      <input type="text" id="nom" placeholder="LARE Damnan">
+      <input type="email" id="email" placeholder="rainalare@gmail.com">
+      <textarea id="message" rows="5" placeholder="Toujours éfficace et ordonnée"></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+    <p id="formMessage" style="color:green; font-weight:bold;"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 LARE Damnan - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    // Validation du formulaire de contact
+    document.getElementById("contactForm").addEventListener("submit", function(event){
+      event.preventDefault();
+      let nom = document.getElementById("nom").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let message = document.getElementById("message").value.trim();
+      let formMessage = document.getElementById("formMessage");
+
+      if(nom === "" || email === "" || message === ""){
+        formMessage.style.color = "red";
+        formMessage.textContent = "Veuillez remplir tous les champs.";
+      } else if(!email.includes("@")){
+        formMessage.style.color = "red";
+        formMessage.textContent = "Veuillez entrer un email valide.";
+      } else {
+        formMessage.style.color = "green";
+        formMessage.textContent = "Merci " + nom + ", votre message a bien été envoyé !";
+        document.getElementById("contactForm").reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
